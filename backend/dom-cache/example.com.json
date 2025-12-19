@@ -1,0 +1,149 @@
+{
+  "url": "https://example.com/",
+  "domain": "example.com",
+  "firstCapturedAt": 1766095360339,
+  "lastUpdatedAt": 1766095360339,
+  "analysisCount": 1,
+  "elementsByType": {
+    "input": [],
+    "button": [],
+    "link": [
+      {
+        "tag": "a",
+        "id": null,
+        "name": null,
+        "placeholder": null,
+        "text": "Learn more",
+        "classes": [],
+        "dataTestId": null,
+        "ariaLabel": null,
+        "title": null,
+        "href": "https://iana.org/domains/example",
+        "typeAttr": null,
+        "labelText": []
+      }
+    ],
+    "dropdown": [],
+    "checkbox": [],
+    "generic": [
+      {
+        "tag": "div",
+        "id": null,
+        "name": null,
+        "placeholder": null,
+        "text": "Example DomainThis domain is for use in documentation examples without needing permission. Avoid use in operations.Learn more",
+        "classes": [],
+        "dataTestId": null,
+        "ariaLabel": null,
+        "title": null,
+        "href": null,
+        "typeAttr": null,
+        "labelText": []
+      },
+      {
+        "tag": "h1",
+        "id": null,
+        "name": null,
+        "placeholder": null,
+        "text": "Example Domain",
+        "classes": [],
+        "dataTestId": null,
+        "ariaLabel": null,
+        "title": null,
+        "href": null,
+        "typeAttr": null,
+        "labelText": []
+      },
+      {
+        "tag": "p",
+        "id": null,
+        "name": null,
+        "placeholder": null,
+        "text": "This domain is for use in documentation examples without needing permission. Avoid use in operations.",
+        "classes": [],
+        "dataTestId": null,
+        "ariaLabel": null,
+        "title": null,
+        "href": null,
+        "typeAttr": null,
+        "labelText": []
+      },
+      {
+        "tag": "p",
+        "id": null,
+        "name": null,
+        "placeholder": null,
+        "text": "Learn more",
+        "classes": [],
+        "dataTestId": null,
+        "ariaLabel": null,
+        "title": null,
+        "href": null,
+        "typeAttr": null,
+        "labelText": []
+      }
+    ],
+    "text": [
+      {
+        "tag": "div",
+        "id": null,
+        "name": null,
+        "placeholder": null,
+        "text": "Example DomainThis domain is for use in documentation examples without needing permission. Avoid use in operations.Learn more",
+        "classes": [],
+        "dataTestId": null,
+        "ariaLabel": null,
+        "title": null,
+        "href": null,
+        "typeAttr": null,
+        "labelText": []
+      },
+      {
+        "tag": "h1",
+        "id": null,
+        "name": null,
+        "placeholder": null,
+        "text": "Example Domain",
+        "classes": [],
+        "dataTestId": null,
+        "ariaLabel": null,
+        "title": null,
+        "href": null,
+        "typeAttr": null,
+        "labelText": []
+      },
+      {
+        "tag": "p",
+        "id": null,
+        "name": null,
+        "placeholder": null,
+        "text": "This domain is for use in documentation examples without needing permission. Avoid use in operations.",
+        "classes": [],
+        "dataTestId": null,
+        "ariaLabel": null,
+        "title": null,
+        "href": null,
+        "typeAttr": null,
+        "labelText": []
+      },
+      {
+        "tag": "p",
+        "id": null,
+        "name": null,
+        "placeholder": null,
+        "text": "Learn more",
+        "classes": [],
+        "dataTestId": null,
+        "ariaLabel": null,
+        "title": null,
+        "href": null,
+        "typeAttr": null,
+        "labelText": []
+      }
+    ]
+  },
+  "metadata": {
+    "totalElements": 9,
+    "lastUrl": "https://example.com/"
+  }
+}

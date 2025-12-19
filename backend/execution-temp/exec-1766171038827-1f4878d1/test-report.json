@@ -1,0 +1,179 @@
+{
+  "config": {
+    "configFile": "/Users/franciscotorres/Desktop/Proyectos Fran/ia-automation-test/backend/playwright.config.ts",
+    "rootDir": "/Users/franciscotorres/Desktop/Proyectos Fran/ia-automation-test/backend",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "/Users/franciscotorres/Desktop/Proyectos Fran/ia-automation-test/backend/execution-temp/exec-1766171038827-1f4878d1/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "/Users/franciscotorres/Desktop/Proyectos Fran/ia-automation-test/backend",
+        "testIgnore": [
+          "tests/**",
+          "node_modules/**"
+        ],
+        "testMatch": [
+          "**/*.spec.ts"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.57.0",
+    "workers": 2,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "execution-temp/exec-1766171038827-1f4878d1/test-exec-1766171038827-1f4878d1.spec.ts",
+      "file": "execution-temp/exec-1766171038827-1f4878d1/test-exec-1766171038827-1f4878d1.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "BCH",
+          "file": "execution-temp/exec-1766171038827-1f4878d1/test-exec-1766171038827-1f4878d1.spec.ts",
+          "line": 6,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Login SauceDemo",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 6873,
+                      "error": {
+                        "message": "Error: Failed to verify text \"Products\". Tried 1 strategies + text search.",
+                        "stack": "Error: Failed to verify text \"Products\". Tried 1 strategies + text search.\n    at SaucedemoPage.smartVerify (/Users/franciscotorres/Desktop/Proyectos Fran/ia-automation-test/backend/execution-temp/exec-1766171038827-1f4878d1/pages/BasePage.ts:131:15)\n    at SaucedemoPage.verifyProductsSeaVisible (/Users/franciscotorres/Desktop/Proyectos Fran/ia-automation-test/backend/execution-temp/exec-1766171038827-1f4878d1/pages/SaucedemoPage.ts:40:9)\n    at /Users/franciscotorres/Desktop/Proyectos Fran/ia-automation-test/backend/execution-temp/exec-1766171038827-1f4878d1/test-exec-1766171038827-1f4878d1.spec.ts:13:5",
+                        "location": {
+                          "file": "/Users/franciscotorres/Desktop/Proyectos Fran/ia-automation-test/backend/execution-temp/exec-1766171038827-1f4878d1/pages/BasePage.ts",
+                          "column": 15,
+                          "line": 131
+                        },
+                        "snippet": "\u001b[90m   at \u001b[39mexecution-temp/exec-1766171038827-1f4878d1/pages/BasePage.ts:131\n\n  129 |\n  130 |         await this.saveDomSnapshot('failure-dom.json');\n> 131 |         throw new Error(`Failed to verify text \"${expectedText}\". Tried ${selectors.length} strategies + text search.`);\n      |               ^\n  132 |     }\n  133 |\n  134 |     protected async smartCheck(selectors: string[], checked: boolean = true) {"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/franciscotorres/Desktop/Proyectos Fran/ia-automation-test/backend/execution-temp/exec-1766171038827-1f4878d1/pages/BasePage.ts",
+                            "column": 15,
+                            "line": 131
+                          },
+                          "message": "Error: Failed to verify text \"Products\". Tried 1 strategies + text search.\n\n   at execution-temp/exec-1766171038827-1f4878d1/pages/BasePage.ts:131\n\n  129 |\n  130 |         await this.saveDomSnapshot('failure-dom.json');\n> 131 |         throw new Error(`Failed to verify text \"${expectedText}\". Tried ${selectors.length} strategies + text search.`);\n      |               ^\n  132 |     }\n  133 |\n  134 |     protected async smartCheck(selectors: string[], checked: boolean = true) {\n    at SaucedemoPage.smartVerify (/Users/franciscotorres/Desktop/Proyectos Fran/ia-automation-test/backend/execution-temp/exec-1766171038827-1f4878d1/pages/BasePage.ts:131:15)\n    at SaucedemoPage.verifyProductsSeaVisible (/Users/franciscotorres/Desktop/Proyectos Fran/ia-automation-test/backend/execution-temp/exec-1766171038827-1f4878d1/pages/SaucedemoPage.ts:40:9)\n    at /Users/franciscotorres/Desktop/Proyectos Fran/ia-automation-test/backend/execution-temp/exec-1766171038827-1f4878d1/test-exec-1766171038827-1f4878d1.spec.ts:13:5"
+                        }
+                      ],
+                      "stdout": [
+                        {
+                          "text": "[Auto-Heal] Fill failed on #login_credentials. Trying backup...\n"
+                        },
+                        {
+                          "text": "[Auto-Heal] Verify failed on xpath=//*[contains(translate(normalize-space(.), \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\", \"abcdefghijklmnopqrstuvwxyz\"), 'products')].\n"
+                        },
+                        {
+                          "text": "[Auto-Heal] Trying to find text \"Products\" directly on page...\n"
+                        },
+                        {
+                          "text": "[Auto-Heal] Text-based search failed.\n"
+                        },
+                        {
+                          "text": "[Auto-Heal] DOM snapshot saved to failure-dom.json\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-12-19T19:04:03.813Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/franciscotorres/Desktop/Proyectos Fran/ia-automation-test/backend/execution-temp/exec-1766171038827-1f4878d1/test-results/execution-temp-exec-176617-ecd2b-f4878d1-BCH-Login-SauceDemo/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/franciscotorres/Desktop/Proyectos Fran/ia-automation-test/backend/execution-temp/exec-1766171038827-1f4878d1/test-results/execution-temp-exec-176617-ecd2b-f4878d1-BCH-Login-SauceDemo/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/franciscotorres/Desktop/Proyectos Fran/ia-automation-test/backend/execution-temp/exec-1766171038827-1f4878d1/test-results/execution-temp-exec-176617-ecd2b-f4878d1-BCH-Login-SauceDemo/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/Users/franciscotorres/Desktop/Proyectos Fran/ia-automation-test/backend/execution-temp/exec-1766171038827-1f4878d1/test-results/execution-temp-exec-176617-ecd2b-f4878d1-BCH-Login-SauceDemo/trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/franciscotorres/Desktop/Proyectos Fran/ia-automation-test/backend/execution-temp/exec-1766171038827-1f4878d1/pages/BasePage.ts",
+                        "column": 15,
+                        "line": 131
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "db32a5aaa9fac17fbeab-aadbbf35b150c13b8cc5",
+              "file": "execution-temp/exec-1766171038827-1f4878d1/test-exec-1766171038827-1f4878d1.spec.ts",
+              "line": 7,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2025-12-19T19:04:02.264Z",
+    "duration": 9075.91,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

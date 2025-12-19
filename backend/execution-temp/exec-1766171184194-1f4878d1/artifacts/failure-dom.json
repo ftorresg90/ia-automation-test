@@ -1,0 +1,653 @@
+{
+  "url": "https://www.saucedemo.com/",
+  "capturedAt": 1766171200694,
+  "elementsByType": {
+    "input": [
+      {
+        "tag": "input",
+        "id": "user-name",
+        "name": "user-name",
+        "placeholder": "Username",
+        "text": "",
+        "classes": [
+          "input_error",
+          "form_input"
+        ],
+        "dataTestId": null,
+        "ariaLabel": null,
+        "title": null,
+        "href": null,
+        "typeAttr": "text",
+        "labelText": []
+      },
+      {
+        "tag": "input",
+        "id": "password",
+        "name": "password",
+        "placeholder": "Password",
+        "text": "",
+        "classes": [
+          "input_error",
+          "form_input"
+        ],
+        "dataTestId": null,
+        "ariaLabel": null,
+        "title": null,
+        "href": null,
+        "typeAttr": "password",
+        "labelText": []
+      },
+      {
+        "tag": "input",
+        "id": "login-button",
+        "name": "login-button",
+        "placeholder": null,
+        "text": "",
+        "classes": [
+          "submit-button",
+          "btn_action"
+        ],
+        "dataTestId": null,
+        "ariaLabel": null,
+        "title": null,
+        "href": null,
+        "typeAttr": "submit",
+        "labelText": []
+      }
+    ],
+    "button": [
+      {
+        "tag": "input",
+        "id": "login-button",
+        "name": "login-button",
+        "placeholder": null,
+        "text": "",
+        "classes": [
+          "submit-button",
+          "btn_action"
+        ],
+        "dataTestId": null,
+        "ariaLabel": null,
+        "title": null,
+        "href": null,
+        "typeAttr": "submit",
+        "labelText": []
+      }
+    ],
+    "link": [],
+    "dropdown": [],
+    "checkbox": [],
+    "generic": [
+      {
+        "tag": "div",
+        "id": "root",
+        "name": null,
+        "placeholder": null,
+        "text": "Swag LabsAccepted usernames are:standard_userlocked_out_userproblem_userperformance_glitch_usererror_uservisual_userPassword for all users:secret_sauce",
+        "classes": [],
+        "dataTestId": null,
+        "ariaLabel": null,
+        "title": null,
+        "href": null,
+        "typeAttr": null,
+        "labelText": []
+      },
+      {
+        "tag": "div",
+        "id": null,
+        "name": null,
+        "placeholder": null,
+        "text": "Swag LabsAccepted usernames are:standard_userlocked_out_userproblem_userperformance_glitch_usererror_uservisual_userPassword for all users:secret_sauce",
+        "classes": [
+          "login_container"
+        ],
+        "dataTestId": null,
+        "ariaLabel": null,
+        "title": null,
+        "href": null,
+        "typeAttr": null,
+        "labelText": []
+      },
+      {
+        "tag": "div",
+        "id": null,
+        "name": null,
+        "placeholder": null,
+        "text": "Swag Labs",
+        "classes": [
+          "login_logo"
+        ],
+        "dataTestId": null,
+        "ariaLabel": null,
+        "title": null,
+        "href": null,
+        "typeAttr": null,
+        "labelText": []
+      },
+      {
+        "tag": "div",
+        "id": null,
+        "name": null,
+        "placeholder": null,
+        "text": "Accepted usernames are:standard_userlocked_out_userproblem_userperformance_glitch_usererror_uservisual_userPassword for all users:secret_sauce",
+        "classes": [
+          "login_wrapper"
+        ],
+        "dataTestId": null,
+        "ariaLabel": null,
+        "title": null,
+        "href": null,
+        "typeAttr": null,
+        "labelText": []
+      },
+      {
+        "tag": "div",
+        "id": null,
+        "name": null,
+        "placeholder": null,
+        "text": "",
+        "classes": [
+          "login_wrapper-inner"
+        ],
+        "dataTestId": null,
+        "ariaLabel": null,
+        "title": null,
+        "href": null,
+        "typeAttr": null,
+        "labelText": []
+      },
+      {
+        "tag": "div",
+        "id": "login_button_container",
+        "name": null,
+        "placeholder": null,
+        "text": "",
+        "classes": [
+          "form_column"
+        ],
+        "dataTestId": null,
+        "ariaLabel": null,
+        "title": null,
+        "href": null,
+        "typeAttr": null,
+        "labelText": []
+      },
+      {
+        "tag": "div",
+        "id": null,
+        "name": null,
+        "placeholder": null,
+        "text": "",
+        "classes": [
+          "login-box"
+        ],
+        "dataTestId": null,
+        "ariaLabel": null,
+        "title": null,
+        "href": null,
+        "typeAttr": null,
+        "labelText": []
+      },
+      {
+        "tag": "div",
+        "id": null,
+        "name": null,
+        "placeholder": null,
+        "text": "",
+        "classes": [
+          "form_group"
+        ],
+        "dataTestId": null,
+        "ariaLabel": null,
+        "title": null,
+        "href": null,
+        "typeAttr": null,
+        "labelText": []
+      },
+      {
+        "tag": "input",
+        "id": "user-name",
+        "name": "user-name",
+        "placeholder": "Username",
+        "text": "",
+        "classes": [
+          "input_error",
+          "form_input"
+        ],
+        "dataTestId": null,
+        "ariaLabel": null,
+        "title": null,
+        "href": null,
+        "typeAttr": "text",
+        "labelText": []
+      },
+      {
+        "tag": "div",
+        "id": null,
+        "name": null,
+        "placeholder": null,
+        "text": "",
+        "classes": [
+          "form_group"
+        ],
+        "dataTestId": null,
+        "ariaLabel": null,
+        "title": null,
+        "href": null,
+        "typeAttr": null,
+        "labelText": []
+      },
+      {
+        "tag": "input",
+        "id": "password",
+        "name": "password",
+        "placeholder": "Password",
+        "text": "",
+        "classes": [
+          "input_error",
+          "form_input"
+        ],
+        "dataTestId": null,
+        "ariaLabel": null,
+        "title": null,
+        "href": null,
+        "typeAttr": "password",
+        "labelText": []
+      },
+      {
+        "tag": "div",
+        "id": null,
+        "name": null,
+        "placeholder": null,
+        "text": "",
+        "classes": [
+          "error-message-container"
+        ],
+        "dataTestId": null,
+        "ariaLabel": null,
+        "title": null,
+        "href": null,
+        "typeAttr": null,
+        "labelText": []
+      },
+      {
+        "tag": "div",
+        "id": null,
+        "name": null,
+        "placeholder": null,
+        "text": "Accepted usernames are:standard_userlocked_out_userproblem_userperformance_glitch_usererror_uservisual_userPassword for all users:secret_sauce",
+        "classes": [
+          "login_credentials_wrap"
+        ],
+        "dataTestId": null,
+        "ariaLabel": null,
+        "title": null,
+        "href": null,
+        "typeAttr": null,
+        "labelText": []
+      },
+      {
+        "tag": "div",
+        "id": null,
+        "name": null,
+        "placeholder": null,
+        "text": "Accepted usernames are:standard_userlocked_out_userproblem_userperformance_glitch_usererror_uservisual_userPassword for all users:secret_sauce",
+        "classes": [
+          "login_credentials_wrap-inner"
+        ],
+        "dataTestId": null,
+        "ariaLabel": null,
+        "title": null,
+        "href": null,
+        "typeAttr": null,
+        "labelText": []
+      },
+      {
+        "tag": "div",
+        "id": "login_credentials",
+        "name": null,
+        "placeholder": null,
+        "text": "Accepted usernames are:standard_userlocked_out_userproblem_userperformance_glitch_usererror_uservisual_user",
+        "classes": [
+          "login_credentials"
+        ],
+        "dataTestId": null,
+        "ariaLabel": null,
+        "title": null,
+        "href": null,
+        "typeAttr": null,
+        "labelText": []
+      },
+      {
+        "tag": "h4",
+        "id": null,
+        "name": null,
+        "placeholder": null,
+        "text": "Accepted usernames are:",
+        "classes": [],
+        "dataTestId": null,
+        "ariaLabel": null,
+        "title": null,
+        "href": null,
+        "typeAttr": null,
+        "labelText": []
+      },
+      {
+        "tag": "div",
+        "id": null,
+        "name": null,
+        "placeholder": null,
+        "text": "Password for all users:secret_sauce",
+        "classes": [
+          "login_password"
+        ],
+        "dataTestId": null,
+        "ariaLabel": null,
+        "title": null,
+        "href": null,
+        "typeAttr": null,
+        "labelText": []
+      },
+      {
+        "tag": "h4",
+        "id": null,
+        "name": null,
+        "placeholder": null,
+        "text": "Password for all users:",
+        "classes": [],
+        "dataTestId": null,
+        "ariaLabel": null,
+        "title": null,
+        "href": null,
+        "typeAttr": null,
+        "labelText": []
+      }
+    ],
+    "text": [
+      {
+        "tag": "div",
+        "id": "root",
+        "name": null,
+        "placeholder": null,
+        "text": "Swag LabsAccepted usernames are:standard_userlocked_out_userproblem_userperformance_glitch_usererror_uservisual_userPassword for all users:secret_sauce",
+        "classes": [],
+        "dataTestId": null,
+        "ariaLabel": null,
+        "title": null,
+        "href": null,
+        "typeAttr": null,
+        "labelText": []
+      },
+      {
+        "tag": "div",
+        "id": null,
+        "name": null,
+        "placeholder": null,
+        "text": "Swag LabsAccepted usernames are:standard_userlocked_out_userproblem_userperformance_glitch_usererror_uservisual_userPassword for all users:secret_sauce",
+        "classes": [
+          "login_container"
+        ],
+        "dataTestId": null,
+        "ariaLabel": null,
+        "title": null,
+        "href": null,
+        "typeAttr": null,
+        "labelText": []
+      },
+      {
+        "tag": "div",
+        "id": null,
+        "name": null,
+        "placeholder": null,
+        "text": "Swag Labs",
+        "classes": [
+          "login_logo"
+        ],
+        "dataTestId": null,
+        "ariaLabel": null,
+        "title": null,
+        "href": null,
+        "typeAttr": null,
+        "labelText": []
+      },
+      {
+        "tag": "div",
+        "id": null,
+        "name": null,
+        "placeholder": null,
+        "text": "Accepted usernames are:standard_userlocked_out_userproblem_userperformance_glitch_usererror_uservisual_userPassword for all users:secret_sauce",
+        "classes": [
+          "login_wrapper"
+        ],
+        "dataTestId": null,
+        "ariaLabel": null,
+        "title": null,
+        "href": null,
+        "typeAttr": null,
+        "labelText": []
+      },
+      {
+        "tag": "div",
+        "id": null,
+        "name": null,
+        "placeholder": null,
+        "text": "",
+        "classes": [
+          "login_wrapper-inner"
+        ],
+        "dataTestId": null,
+        "ariaLabel": null,
+        "title": null,
+        "href": null,
+        "typeAttr": null,
+        "labelText": []
+      },
+      {
+        "tag": "div",
+        "id": "login_button_container",
+        "name": null,
+        "placeholder": null,
+        "text": "",
+        "classes": [
+          "form_column"
+        ],
+        "dataTestId": null,
+        "ariaLabel": null,
+        "title": null,
+        "href": null,
+        "typeAttr": null,
+        "labelText": []
+      },
+      {
+        "tag": "div",
+        "id": null,
+        "name": null,
+        "placeholder": null,
+        "text": "",
+        "classes": [
+          "login-box"
+        ],
+        "dataTestId": null,
+        "ariaLabel": null,
+        "title": null,
+        "href": null,
+        "typeAttr": null,
+        "labelText": []
+      },
+      {
+        "tag": "div",
+        "id": null,
+        "name": null,
+        "placeholder": null,
+        "text": "",
+        "classes": [
+          "form_group"
+        ],
+        "dataTestId": null,
+        "ariaLabel": null,
+        "title": null,
+        "href": null,
+        "typeAttr": null,
+        "labelText": []
+      },
+      {
+        "tag": "input",
+        "id": "user-name",
+        "name": "user-name",
+        "placeholder": "Username",
+        "text": "",
+        "classes": [
+          "input_error",
+          "form_input"
+        ],
+        "dataTestId": null,
+        "ariaLabel": null,
+        "title": null,
+        "href": null,
+        "typeAttr": "text",
+        "labelText": []
+      },
+      {
+        "tag": "div",
+        "id": null,
+        "name": null,
+        "placeholder": null,
+        "text": "",
+        "classes": [
+          "form_group"
+        ],
+        "dataTestId": null,
+        "ariaLabel": null,
+        "title": null,
+        "href": null,
+        "typeAttr": null,
+        "labelText": []
+      },
+      {
+        "tag": "input",
+        "id": "password",
+        "name": "password",
+        "placeholder": "Password",
+        "text": "",
+        "classes": [
+          "input_error",
+          "form_input"
+        ],
+        "dataTestId": null,
+        "ariaLabel": null,
+        "title": null,
+        "href": null,
+        "typeAttr": "password",
+        "labelText": []
+      },
+      {
+        "tag": "div",
+        "id": null,
+        "name": null,
+        "placeholder": null,
+        "text": "",
+        "classes": [
+          "error-message-container"
+        ],
+        "dataTestId": null,
+        "ariaLabel": null,
+        "title": null,
+        "href": null,
+        "typeAttr": null,
+        "labelText": []
+      },
+      {
+        "tag": "div",
+        "id": null,
+        "name": null,
+        "placeholder": null,
+        "text": "Accepted usernames are:standard_userlocked_out_userproblem_userperformance_glitch_usererror_uservisual_userPassword for all users:secret_sauce",
+        "classes": [
+          "login_credentials_wrap"
+        ],
+        "dataTestId": null,
+        "ariaLabel": null,
+        "title": null,
+        "href": null,
+        "typeAttr": null,
+        "labelText": []
+      },
+      {
+        "tag": "div",
+        "id": null,
+        "name": null,
+        "placeholder": null,
+        "text": "Accepted usernames are:standard_userlocked_out_userproblem_userperformance_glitch_usererror_uservisual_userPassword for all users:secret_sauce",
+        "classes": [
+          "login_credentials_wrap-inner"
+        ],
+        "dataTestId": null,
+        "ariaLabel": null,
+        "title": null,
+        "href": null,
+        "typeAttr": null,
+        "labelText": []
+      },
+      {
+        "tag": "div",
+        "id": "login_credentials",
+        "name": null,
+        "placeholder": null,
+        "text": "Accepted usernames are:standard_userlocked_out_userproblem_userperformance_glitch_usererror_uservisual_user",
+        "classes": [
+          "login_credentials"
+        ],
+        "dataTestId": null,
+        "ariaLabel": null,
+        "title": null,
+        "href": null,
+        "typeAttr": null,
+        "labelText": []
+      },
+      {
+        "tag": "h4",
+        "id": null,
+        "name": null,
+        "placeholder": null,
+        "text": "Accepted usernames are:",
+        "classes": [],
+        "dataTestId": null,
+        "ariaLabel": null,
+        "title": null,
+        "href": null,
+        "typeAttr": null,
+        "labelText": []
+      },
+      {
+        "tag": "div",
+        "id": null,
+        "name": null,
+        "placeholder": null,
+        "text": "Password for all users:secret_sauce",
+        "classes": [
+          "login_password"
+        ],
+        "dataTestId": null,
+        "ariaLabel": null,
+        "title": null,
+        "href": null,
+        "typeAttr": null,
+        "labelText": []
+      },
+      {
+        "tag": "h4",
+        "id": null,
+        "name": null,
+        "placeholder": null,
+        "text": "Password for all users:",
+        "classes": [],
+        "dataTestId": null,
+        "ariaLabel": null,
+        "title": null,
+        "href": null,
+        "typeAttr": null,
+        "labelText": []
+      }
+    ]
+  }
+}

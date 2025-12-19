@@ -1,0 +1,3 @@
+Title,Description,Steps,Component,Feature
+"Búsqueda Wikipedia","Buscar IA","1. Navegar a https://www.wikipedia.org 2. Ingresar 'Inteligencia Artificial' en el campo de búsqueda 3. Hacer click en el botón de búsqueda 4. Verificar que el título contenga 'Inteligencia artificial'",Búsqueda,Conocimiento
+"Artículo Python","Leer sobre Python","1. Navegar a https://www.wikipedia.org 2. Buscar 'Python (lenguaje de programación)' 3. Hacer click en buscar",Búsqueda,Conocimiento

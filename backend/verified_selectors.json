@@ -1,0 +1,23 @@
+[
+  {
+    "elementName": "tituloContengaInteligencia",
+    "selector": "//*[contains(translate(normalize-space(.), \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\", \"abcdefghijklmnopqrstuvwxyz\"), 'titulocontengainteligencia')]",
+    "type": "xpath",
+    "context": "tituloContengaInteligencia",
+    "verifiedAt": 1766169270863
+  },
+  {
+    "elementName": "campoDeBusqueda",
+    "selector": "input[name*=\"search\" i]",
+    "type": "css",
+    "context": "campoDeBusqueda",
+    "verifiedAt": 1766167413698
+  },
+  {
+    "elementName": "productsSeaVisible",
+    "selector": "//*[contains(translate(normalize-space(.), \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\", \"abcdefghijklmnopqrstuvwxyz\"), 'products')]",
+    "type": "xpath",
+    "context": "productsSeaVisible",
+    "verifiedAt": 1766171205006
+  }
+]

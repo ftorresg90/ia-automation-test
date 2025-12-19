@@ -1,0 +1,12 @@
+{
+    "watch": [
+        "src"
+    ],
+    "ignore": [
+        "execution-temp/**/*",
+        "archived-execution-temp/**/*",
+        "uploads/**/*"
+    ],
+    "ext": "ts,js,json",
+    "exec": "ts-node src/server.ts"
+}

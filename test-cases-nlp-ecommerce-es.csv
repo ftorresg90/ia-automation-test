@@ -1,0 +1,3 @@
+Title,Description,Steps,Component,Feature
+"Login SauceDemo","Verificar login correcto","1. Navegar a https://www.saucedemo.com/ 2. Ingresar 'standard_user' en 'Username' 3. Ingresar 'secret_sauce' en 'Password' 4. Hacer click en botón 'Login' 5. Verificar que 'Products' sea visible",Autenticación,Login
+"Búsqueda Amazon","Buscar un producto en Amazon","1. Navegar a https://www.amazon.es 2. Ingresar 'iPhone 15' en la barra de búsqueda 3. Hacer click en 'Ir' 4. Verificar que el texto 'Apple iPhone 15' esté presente",Búsqueda,Catálogo

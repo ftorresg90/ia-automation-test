@@ -1,0 +1,13 @@
+
+Running 1 test using 1 worker
+
+[1A[2K[1/1] execution-temp/exec-1766171667064-a6dc26f8/test-exec-1766171667064-a6dc26f8.spec.ts:7:7 › BCH › Búsqueda Wikipedia
+[1A[2Kexecution-temp/exec-1766171667064-a6dc26f8/test-exec-1766171667064-a6dc26f8.spec.ts:7:7 › BCH › Búsqueda Wikipedia
+[Auto-Heal] Click failed on button.pure-button.pure-button-primary-progressive. Trying backup...
+
+[1A[2K[Auto-Heal] Verify failed on xpath=//*[contains(translate(normalize-space(.), "ABCDEFGHIJKLMNOPQRSTUVWXYZ", "abcdefghijklmnopqrstuvwxyz"), 'titulocontengainteligencia')].
+
+[1A[2K[Auto-Heal] Verify failed on #frequencyGrid.
+
+[1A[2K  1 passed (14.2s)
+

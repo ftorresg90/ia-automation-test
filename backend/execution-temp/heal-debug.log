@@ -1,0 +1,154 @@
+🚑 [Auto-Heal] Generating new selector for "tituloContengaInteligencia"...
+[Heal] Loaded DOM snapshot for URL: https://en.wikipedia.org/wiki/Special:Search?go=Go&search=Inteligencia+Artificial&ns0=1
+🚑 [Auto-Heal] Found better selector: //*[contains(translate(normalize-space(.), "ABCDEFGHIJKLMNOPQRSTUVWXYZ", "abcdefghijklmnopqrstuvwxyz"), 'titulocontengainteligencia')]
+✅ [Auto-Heal] Applied fix to tituloContengaInteligenciaSelectors using AST
+🚑 [Auto-Heal] Generating new selector for "tituloContengaInteligencia"...
+[Heal] Loaded DOM snapshot for URL: https://en.wikipedia.org/wiki/Special:Search?go=Go&search=Inteligencia+Artificial&ns0=1
+🚑 [Auto-Heal] Found better selector: xpath=//*[contains(translate(normalize-space(.), "ABCDEFGHIJKLMNOPQRSTUVWXYZ", "abcdefghijklmnopqrstuvwxyz"), 'titulocontengainteligencia')]
+🚑 [Auto-Heal] Generated selector already exists in the list.
+🚑 [Auto-Heal] Generating new selector for "campoDeBusqueda"...
+[Heal] Loaded DOM snapshot for URL: https://www.amazon.es/
+🚑 [Auto-Heal] Found better selector: input[name*="search" i]
+🚑 [Auto-Heal] Generated selector already exists in the list.
+🚑 [Auto-Heal] Generating new selector for "campoDeBusqueda"...
+[Heal] Loaded DOM snapshot for URL: https://www.amazon.es/
+🚑 [Auto-Heal] Found better selector: input[name*="search" i]
+🚑 [Auto-Heal] Generated selector already exists in the list.
+🚑 [Auto-Heal] Generating new selector for "campoDeBusqueda"...
+[Heal] Loaded DOM snapshot for URL: https://www.amazon.es/
+🚑 [Auto-Heal] Found better selector: input[name*="search" i]
+🚑 [Auto-Heal] Generated selector already exists in the list.
+🚑 [Auto-Heal] Generating new selector for "campoDeBusqueda"...
+[Heal] Loaded DOM snapshot for URL: https://www.amazon.es/
+🚑 [Auto-Heal] Found better selector: input[name*="search" i]
+🚑 [Auto-Heal] Generated selector already exists in the list.
+🚑 [Auto-Heal] Generating new selector for "campoDeBusqueda"...
+[Heal] Loaded DOM snapshot for URL: https://www.amazon.es/
+🚑 [Auto-Heal] Found better selector: input[name*="search" i]
+🚑 [Auto-Heal] Generated selector already exists in the list.
+🚑 [Auto-Heal] Generating new selector for "campoDeBusqueda"...
+[Heal] Loaded DOM snapshot for URL: https://www.amazon.es/
+🚑 [Auto-Heal] Found better selector: input[name*="search" i]
+🚑 [Auto-Heal] Generated selector already exists in the list.
+🚑 [Auto-Heal] Generating new selector for "campoDeBusqueda"...
+[Heal] Loaded DOM snapshot for URL: https://www.amazon.es/
+🚑 [Auto-Heal] Found better selector: input[name*="search" i]
+🚑 [Auto-Heal] Generated selector already exists in the list.
+🚑 [Auto-Heal] Generating new selector for "campoDeBusqueda"...
+[Heal] Loaded DOM snapshot for URL: https://www.amazon.es/
+[Heal] Excluding the following selectors: ["input[name*=\"search\" i]"]
+🚑 [Auto-Heal] Found better selector: input[name*="search" i]
+🚑 [Auto-Heal] Generated selector already exists in the list.
+🚑 [Auto-Heal] Generating new selector for "campoDeBusqueda"...
+[Heal] Loaded DOM snapshot for URL: https://www.amazon.es/
+[Heal] Excluding the following selectors: ["input[name*=\"search\" i]"]
+🚑 [Auto-Heal] Found better selector: input[name*="search" i]
+🚑 [Auto-Heal] Generated selector already exists in the list.
+🚑 [Auto-Heal] Generating new selector for "campoDeBusqueda"...
+[Heal] Loaded DOM snapshot for URL: https://www.amazon.es/
+[Heal] Excluding the following selectors: ["input[name*=\"search\" i]"]
+🚑 [Auto-Heal] Found better selector: input[name*="search" i]
+🚑 [Auto-Heal] Generated selector already exists in the list.
+🚑 [Auto-Heal] Generating new selector for "campoDeBusqueda"...
+[Heal] Loaded DOM snapshot for URL: https://www.amazon.es/
+[Heal] Excluding the following selectors: ["xpath=//*[contains(translate(normalize-space(.), \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\", \"abcdefghijklmnopqrstuvwxyz\"), 'campodebusqueda')]"]
+🚑 [Auto-Heal] Found better selector: input[name*="search" i]
+✅ [Auto-Heal] Applied fix to campoDeBusquedaSelectors using AST
+🚑 [Auto-Heal] Generating new selector for "campoDeBusqueda"...
+[Heal] Loaded DOM snapshot for URL: https://www.amazon.es/
+[Heal] Excluding the following selectors: ["input[name*=\"search\" i]"]
+🚑 [Auto-Heal] Found better selector: input[name*="search" i]
+🚑 [Auto-Heal] Generated selector already exists in the list.
+🚑 [Auto-Heal] Generating new selector for "campoDeBusqueda"...
+[Heal] Loaded DOM snapshot for URL: https://www.amazon.es/
+[Heal] Excluding the following selectors: ["xpath=//*[contains(translate(normalize-space(.), \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\", \"abcdefghijklmnopqrstuvwxyz\"), 'campodebusqueda')]"]
+🚑 [Auto-Heal] Found better selector: input[name*="search" i]
+✅ [Auto-Heal] Applied fix to campoDeBusquedaSelectors using AST
+🚑 [Auto-Heal] Generating new selector for "campoDeBusqueda"...
+[Heal] Loaded DOM snapshot for URL: https://www.amazon.es/
+[Heal] Excluding the following selectors: ["input[name*=\"search\" i]"]
+🚑 [Auto-Heal] Found better selector: input[name*="search" i]
+🚑 [Auto-Heal] Generated selector already exists in the list.
+🚑 [Auto-Heal] Generating new selector for "campoDeBusqueda"...
+[Heal] Loaded DOM snapshot for URL: https://www.amazon.es/
+[Heal] Excluding the following selectors: ["input[name*=\"search\" i]"]
+🚑 [Auto-Heal] Found better selector: input[name*="search" i]
+🚑 [Auto-Heal] Generated selector already exists in the list.
+🚑 [Auto-Heal] Generating new selector for "campoDeBusqueda"...
+[Heal] Loaded DOM snapshot for URL: https://www.amazon.es/
+[Heal] Excluding the following selectors: ["input[name*=\"search\" i]","#nav-assist-skip-to-main-content","xpath=//*[contains(translate(normalize-space(.), \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\", \"abcdefghijklmnopqrstuvwxyz\"), 'main content')]","#shortcut-menu","a[id*=\"nav-assist-skip-to-main-content\"]","a[aria-label=\"Adolescentes\"]","a[aria-label=\"Nintendo Switch\"]","a[aria-label=\"Tendencia ahora\"]","a[aria-label=\"For teens\"]","a[aria-label=\"Jug blenders\"]","xpath=//*[contains(translate(normalize-space(.), \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\", \"abcdefghijklmnopqrstuvwxyz\"), 'adolescentes')]"]
+🚑 [Auto-Heal] Found better selector: input[name*="search" i]
+🚑 [Auto-Heal] Generated selector already exists in the list.
+🚑 [Auto-Heal] Generating new selector for "campoDeBusqueda"...
+[Heal] Loaded DOM snapshot for URL: https://www.amazon.es/
+[Heal] Excluding the following selectors: ["input[name*=\"search\" i]","#a-page","div[id*=\"a-page\"]","#nav-assist-skip-to-main-content","xpath=//*[contains(translate(normalize-space(.), \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\", \"abcdefghijklmnopqrstuvwxyz\"), 'main content')]","#shortcut-menu","a[id*=\"nav-assist-skip-to-main-content\"]","a[aria-label=\"Adolescentes\"]","a[aria-label=\"Nintendo Switch\"]","a[aria-label=\"Tendencia ahora\"]","a[aria-label=\"For teens\"]"]
+🚑 [Auto-Heal] Found better selector: input[name*="search" i]
+🚑 [Auto-Heal] Generated selector already exists in the list.
+🚑 [Auto-Heal] Generating new selector for "campoDeBusqueda"...
+[Heal] Excluding the following selectors: ["#a-page","div[id*=\"a-page\"]","#searchDropdownBox","#shortcut-menu","select[name=\"url\"]","#twotabsearchtextbox","select[name*=\"url\"]","select[id*=\"searchDropdownBox\"]","nav[id*=\"shortcut-menu\"]","input[name=\"field-keywords\"]"]
+🚑 [Auto-Heal] Found better selector: input[name*="search" i]
+✅ [Auto-Heal] Applied fix to campoDeBusquedaSelectors using AST
+🚑 [Auto-Heal] Generating new selector for "productsSeaVisible"...
+[Heal] Loaded DOM snapshot for URL: https://www.saucedemo.com/
+[Heal] Excluding the following selectors: ["xpath=//*[contains(translate(normalize-space(.), \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\", \"abcdefghijklmnopqrstuvwxyz\"), 'products')]"]
+🚑 [Auto-Heal] Generating new selector for "tituloContengaInteligencia"...
+[Heal] Excluding the following selectors: ["xpath=//*[contains(translate(normalize-space(.), \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\", \"abcdefghijklmnopqrstuvwxyz\"), 'titulocontengainteligencia')]","#frequencyGrid","xpath=//*[contains(translate(normalize-space(.), \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\", \"abcdefghijklmnopqrstuvwxyz\"), 'one time give monthly')]","div.overlay-banner-main-frequency.button-grid"]
+🚑 [Auto-Heal] Found better selector: //*[contains(translate(normalize-space(.), "ABCDEFGHIJKLMNOPQRSTUVWXYZ", "abcdefghijklmnopqrstuvwxyz"), 'productsseavisible')]
+✅ [Auto-Heal] Applied fix to productsSeaVisibleSelectors using AST
+🚑 [Auto-Heal] Found better selector: //*[contains(translate(normalize-space(.), "ABCDEFGHIJKLMNOPQRSTUVWXYZ", "abcdefghijklmnopqrstuvwxyz"), 'titulocontengainteligencia')]
+✅ [Auto-Heal] Applied fix to tituloContengaInteligenciaSelectors using AST
+🚑 [Auto-Heal] Generating new selector for "productsSeaVisible"...
+[Heal] Loaded DOM snapshot for URL: https://www.saucedemo.com/
+[Heal] Excluding the following selectors: ["xpath=//*[contains(translate(normalize-space(.), \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\", \"abcdefghijklmnopqrstuvwxyz\"), 'productsseavisible')]"]
+🚑 [Auto-Heal] Found better selector: //*[contains(translate(normalize-space(.), "ABCDEFGHIJKLMNOPQRSTUVWXYZ", "abcdefghijklmnopqrstuvwxyz"), 'productsseavisible')]
+✅ [Auto-Heal] Applied fix to productsSeaVisibleSelectors using AST
+🚑 [Auto-Heal] Generating new selector for "productsSeaVisible"...
+[Heal] Loaded DOM snapshot for URL: https://www.saucedemo.com/
+[Heal] Excluding the following selectors: ["xpath=//*[contains(translate(normalize-space(.), \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\", \"abcdefghijklmnopqrstuvwxyz\"), 'productsseavisible')]"]
+🚑 [Auto-Heal] Found better selector: //*[contains(translate(normalize-space(.), "ABCDEFGHIJKLMNOPQRSTUVWXYZ", "abcdefghijklmnopqrstuvwxyz"), 'productsseavisible')]
+✅ [Auto-Heal] Applied fix to productsSeaVisibleSelectors using AST
+🚑 [Auto-Heal] Generating new selector for "productsSeaVisible"...
+[Heal] Loaded DOM snapshot for URL: https://www.saucedemo.com/
+[Heal] Excluding the following selectors: ["xpath=//*[contains(translate(normalize-space(.), \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\", \"abcdefghijklmnopqrstuvwxyz\"), 'productsseavisible')]"]
+🚑 [Auto-Heal] Found better selector: //*[contains(translate(normalize-space(.), "ABCDEFGHIJKLMNOPQRSTUVWXYZ", "abcdefghijklmnopqrstuvwxyz"), 'productsseavisible')]
+✅ [Auto-Heal] Applied fix to productsSeaVisibleSelectors using AST
+🚑 [Auto-Heal] Generating new selector for "productsSeaVisible"...
+[Heal] Loaded DOM snapshot for URL: https://www.saucedemo.com/
+[Heal] Excluding the following selectors: ["xpath=//*[contains(translate(normalize-space(.), \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\", \"abcdefghijklmnopqrstuvwxyz\"), 'productsseavisible')]"]
+🚑 [Auto-Heal] Found better selector: //*[contains(translate(normalize-space(.), "ABCDEFGHIJKLMNOPQRSTUVWXYZ", "abcdefghijklmnopqrstuvwxyz"), 'productsseavisible')]
+✅ [Auto-Heal] Applied fix to productsSeaVisibleSelectors using AST
+🚑 [Auto-Heal] Generating new selector for "productsSeaVisible"...
+[Heal] Loaded DOM snapshot for URL: https://www.saucedemo.com/
+[Heal] Excluding the following selectors: ["xpath=//*[contains(translate(normalize-space(.), \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\", \"abcdefghijklmnopqrstuvwxyz\"), 'products')]"]
+🚑 [Auto-Heal] Found better selector: //*[contains(translate(normalize-space(.), "ABCDEFGHIJKLMNOPQRSTUVWXYZ", "abcdefghijklmnopqrstuvwxyz"), 'products')]
+✅ [Auto-Heal] Applied fix to productsSeaVisibleSelectors using AST
+🚑 [Auto-Heal] Generating new selector for "productsSeaVisible"...
+[Heal] Loaded DOM snapshot for URL: https://www.saucedemo.com/
+[Heal] Excluding the following selectors: ["xpath=//*[contains(translate(normalize-space(.), \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\", \"abcdefghijklmnopqrstuvwxyz\"), 'products')]"]
+🚑 [Auto-Heal] Found better selector: //*[contains(translate(normalize-space(.), "ABCDEFGHIJKLMNOPQRSTUVWXYZ", "abcdefghijklmnopqrstuvwxyz"), 'products')]
+✅ [Auto-Heal] Applied fix to productsSeaVisibleSelectors using AST
+🚑 [Auto-Heal] Generating new selector for "productsSeaVisible"...
+[Heal] Loaded DOM snapshot for URL: https://www.saucedemo.com/
+[Heal] Excluding the following selectors: ["xpath=//*[contains(translate(normalize-space(.), \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\", \"abcdefghijklmnopqrstuvwxyz\"), 'products')]"]
+🚑 [Auto-Heal] Found better selector: //*[contains(translate(normalize-space(.), "ABCDEFGHIJKLMNOPQRSTUVWXYZ", "abcdefghijklmnopqrstuvwxyz"), 'products')]
+✅ [Auto-Heal] Applied fix to productsSeaVisibleSelectors using AST
+🚑 [Auto-Heal] Generating new selector for "productsSeaVisible"...
+[Heal] Loaded DOM snapshot for URL: https://www.saucedemo.com/
+[Heal] Excluding the following selectors: ["xpath=//*[contains(translate(normalize-space(.), \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\", \"abcdefghijklmnopqrstuvwxyz\"), 'products')]"]
+🚑 [Auto-Heal] Found better selector: //*[contains(translate(normalize-space(.), "ABCDEFGHIJKLMNOPQRSTUVWXYZ", "abcdefghijklmnopqrstuvwxyz"), 'products')]
+✅ [Auto-Heal] Applied fix to productsSeaVisibleSelectors using AST
+🚑 [Auto-Heal] Generating new selector for "productsSeaVisible"...
+[Heal] Loaded DOM snapshot for URL: https://www.saucedemo.com/
+[Heal] Excluding the following selectors: ["xpath=//*[contains(translate(normalize-space(.), \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\", \"abcdefghijklmnopqrstuvwxyz\"), 'products')]"]
+🚑 [Auto-Heal] Found better selector: //*[contains(translate(normalize-space(.), "ABCDEFGHIJKLMNOPQRSTUVWXYZ", "abcdefghijklmnopqrstuvwxyz"), 'products')]
+✅ [Auto-Heal] Applied fix to productsSeaVisibleSelectors using AST
+🚑 [Auto-Heal] Generating new selector for "productsSeaVisible"...
+[Heal] Loaded DOM snapshot for URL: https://www.saucedemo.com/
+[Heal] Excluding the following selectors: ["xpath=//*[contains(translate(normalize-space(.), \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\", \"abcdefghijklmnopqrstuvwxyz\"), 'products')]"]
+🚑 [Auto-Heal] Found better selector: //*[contains(translate(normalize-space(.), "ABCDEFGHIJKLMNOPQRSTUVWXYZ", "abcdefghijklmnopqrstuvwxyz"), 'products')]
+✅ [Auto-Heal] Applied fix to productsSeaVisibleSelectors using AST
+🚑 [Auto-Heal] Generating new selector for "productsSeaVisible"...
+[Heal] Loaded DOM snapshot for URL: https://www.saucedemo.com/
+[Heal] Excluding the following selectors: ["xpath=//*[contains(translate(normalize-space(.), \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\", \"abcdefghijklmnopqrstuvwxyz\"), 'products')]"]
+🚑 [Auto-Heal] Found better selector: //*[contains(translate(normalize-space(.), "ABCDEFGHIJKLMNOPQRSTUVWXYZ", "abcdefghijklmnopqrstuvwxyz"), 'products')]
+✅ [Auto-Heal] Applied fix to productsSeaVisibleSelectors using AST

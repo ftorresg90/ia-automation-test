@@ -1,0 +1,20 @@
+{
+  "url": "about:blank",
+  "domain": "",
+  "firstCapturedAt": 1766095371371,
+  "lastUpdatedAt": 1766095809352,
+  "analysisCount": 3,
+  "elementsByType": {
+    "input": [],
+    "button": [],
+    "link": [],
+    "dropdown": [],
+    "checkbox": [],
+    "generic": [],
+    "text": []
+  },
+  "metadata": {
+    "totalElements": 0,
+    "lastUrl": "about:blank"
+  }
+}
