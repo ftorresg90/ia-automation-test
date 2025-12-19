@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
+import { supabase } from '../lib/supabase';
 import { LogIn, Mail, Lock } from 'lucide-react';
 import Toast from '../components/Toast';
 
@@ -15,12 +16,37 @@ const Login = () => {
         e.preventDefault();
         setLoading(true);
         try {
-            const res = await axios.post('http://localhost:3001/auth/login', { email, password });
-            localStorage.setItem('token', res.data.token);
-            localStorage.setItem('user', JSON.stringify(res.data.user));
+            // 1. Supabase Login
+            const { data, error } = await supabase.auth.signInWithPassword({
+                email,
+                password,
+            });
+
+            if (error) throw error;
+            if (!data.session) throw new Error('No session created');
+
+            // 2. Auto-Sync: Ensure user exists in our DB
+            // This fixes "USER_NOT_SYNCED" issues if the user was created in Supabase but not in DB
+            try {
+                const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3001';
+                await axios.post(`${apiUrl}/auth/setup-account`, {
+                    name: 'User', // Default or fetch from profile if stored
+                    organizationName: 'My Organization' // Default
+                }, {
+                    headers: {
+                        Authorization: `Bearer ${data.session.access_token}`
+                    }
+                });
+            } catch (syncError) {
+                console.warn('Auto-sync failed, might already exist or other issue:', syncError);
+                // We don't block login here, as the user might already exist and the error is spurious, 
+                // or if it fails really, the next page will catch it.
+            }
+
             navigate('/dashboard');
-        } catch (error) {
-            setToast({ message: 'Login failed. Please check your credentials.', type: 'error' });
+        } catch (error: any) {
+            console.error(error);
+            setToast({ message: error.message || 'Login failed.', type: 'error' });
         } finally {
             setLoading(false);
         }
@@ -84,14 +110,16 @@ const Login = () => {
                     </Link>
                 </p>
             </div>
-            {toast && (
-                <Toast
-                    message={toast.message}
-                    type={toast.type}
-                    onClose={() => setToast(null)}
-                />
-            )}
-        </div>
+            {
+                toast && (
+                    <Toast
+                        message={toast.message}
+                        type={toast.type}
+                        onClose={() => setToast(null)}
+                    />
+                )
+            }
+        </div >
     );
 };
 

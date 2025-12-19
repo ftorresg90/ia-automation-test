@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
+import { supabase } from '../lib/supabase';
 import Toast from '../components/Toast';
 
 const Register = () => {
@@ -20,12 +21,38 @@ const Register = () => {
     const handleRegister = async (e: React.FormEvent) => {
         e.preventDefault();
         try {
-            const res = await axios.post('http://localhost:3001/auth/register', formData);
-            localStorage.setItem('token', res.data.token);
-            localStorage.setItem('user', JSON.stringify(res.data.user));
+            // 1. Supabase Sign Up
+            const { data: { user, session }, error } = await supabase.auth.signUp({
+                email: formData.email,
+                password: formData.password,
+                options: {
+                    data: {
+                        full_name: formData.name,
+                    }
+                }
+            });
+
+            if (error) throw error;
+            if (!user || !session) throw new Error('Registration successful but no session created. Check email confirmation settings.');
+
+            // 2. Sync with our Backend
+            // We need the token to authenticate with our backend
+            const token = session.access_token;
+
+            await axios.post('http://localhost:3001/auth/setup-account', {
+                name: formData.name,
+                organizationName: formData.organizationName
+            }, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
+
+            // Navigate
             navigate('/dashboard');
-        } catch (error) {
-            setToast({ message: 'Registration failed', type: 'error' });
+        } catch (error: any) {
+            console.error(error);
+            setToast({ message: error.message || 'Registration failed', type: 'error' });
         }
     };
 
