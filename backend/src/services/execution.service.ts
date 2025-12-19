@@ -1,10 +1,11 @@
 import { exec, ChildProcess } from 'child_process';
 import fs from 'fs';
 import path from 'path';
+import os from 'os';
 import prisma from '../utils/prisma';
 import { generateSelector } from './selector.service';
 
-const EXECUTION_DIR = path.join(__dirname, '../../execution-temp');
+const EXECUTION_DIR = path.join(os.tmpdir(), 'execution-temp');
 
 if (!fs.existsSync(EXECUTION_DIR)) {
   fs.mkdirSync(EXECUTION_DIR, { recursive: true });
@@ -130,7 +131,7 @@ export const runPlaywright = async (executionId: string, projectId: string, test
     PLAYWRIGHT_JSON_OUTPUT_NAME: reportPath
   };
   // Explicitly use the config file
-  const projectRoot = path.join(__dirname, '../../');
+  const projectRoot = process.cwd();
   const configPath = './playwright.config.ts'; // Use relative path since we run from projectRoot
   const relativeTestPath = path.relative(projectRoot, testFilePath);
 

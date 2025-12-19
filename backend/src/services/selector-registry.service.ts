@@ -1,6 +1,7 @@
 
 import fs from 'fs';
 import path from 'path';
+import os from 'os';
 
 export interface VerifiedSelector {
     elementName: string;
@@ -11,17 +12,37 @@ export interface VerifiedSelector {
     verifiedAt: number;
 }
 
-const REGISTRY_PATH = path.join(__dirname, '../../verified_selectors.json');
+const BUNDLED_REGISTRY_PATH = path.join(__dirname, '../../verified_selectors.json');
+const TMP_REGISTRY_PATH = path.join(os.tmpdir(), 'verified_selectors.json');
 
 class SelectorRegistryService {
     private cache: Map<string, VerifiedSelector> = new Map();
     private loaded = false;
 
+    private getRegistryPath(): string {
+        // If we are in Vercel, use /tmp. Otherwise use local path if it exists for dev.
+        // Actually, always use /tmp for consistency in serverless, but try to seed it from bundled file.
+        return TMP_REGISTRY_PATH;
+    }
+
+    private seedFromBundle() {
+        try {
+            if (fs.existsSync(BUNDLED_REGISTRY_PATH) && !fs.existsSync(TMP_REGISTRY_PATH)) {
+                fs.copyFileSync(BUNDLED_REGISTRY_PATH, TMP_REGISTRY_PATH);
+                console.log('[Registry] Seeded registry in /tmp from bundle');
+            }
+        } catch (error) {
+            console.error('Failed to seed selector registry', error);
+        }
+    }
+
     private load() {
         if (this.loaded) return;
+        this.seedFromBundle();
+        const registryPath = this.getRegistryPath();
         try {
-            if (fs.existsSync(REGISTRY_PATH)) {
-                const data = JSON.parse(fs.readFileSync(REGISTRY_PATH, 'utf-8'));
+            if (fs.existsSync(registryPath)) {
+                const data = JSON.parse(fs.readFileSync(registryPath, 'utf-8'));
                 if (Array.isArray(data)) {
                     data.forEach((item: VerifiedSelector) => {
                         this.cache.set(this.getKey(item.elementName, item.context), item);
@@ -35,9 +56,10 @@ class SelectorRegistryService {
     }
 
     private save() {
+        const registryPath = this.getRegistryPath();
         try {
             const data = Array.from(this.cache.values());
-            fs.writeFileSync(REGISTRY_PATH, JSON.stringify(data, null, 2));
+            fs.writeFileSync(registryPath, JSON.stringify(data, null, 2));
         } catch (error) {
             console.error('Failed to save selector registry', error);
         }

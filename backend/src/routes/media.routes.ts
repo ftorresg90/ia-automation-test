@@ -1,11 +1,12 @@
 import { Router, Request, Response } from 'express';
 import path from 'path';
 import fs from 'fs';
+import os from 'os';
 
 const router = Router();
 
 const buildExecutionPath = (...segments: string[]) => {
-    return path.join(__dirname, '..', '..', 'execution-temp', ...segments);
+    return path.join(os.tmpdir(), 'execution-temp', ...segments);
 };
 
 router.get('/video/:executionId', (req: Request, res: Response) => {

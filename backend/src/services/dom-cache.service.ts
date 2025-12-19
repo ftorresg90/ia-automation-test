@@ -1,6 +1,7 @@
 
 import fs from 'fs';
 import path from 'path';
+import os from 'os';
 
 interface PageElement {
     tag: string;
@@ -31,7 +32,7 @@ interface DomCacheEntry {
     };
 }
 
-const CACHE_DIR = path.join(__dirname, '../../dom-cache');
+const CACHE_DIR = path.join(os.tmpdir(), 'dom-cache');
 const TTL_DAYS = 30; // Cache válido por 30 días
 
 class DomCacheService {
