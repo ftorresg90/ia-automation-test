@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 import { supabase } from '../lib/supabase';
+import { API_URL } from '../lib/api';
 import Toast from '../components/Toast';
 
 const Register = () => {
@@ -39,7 +40,7 @@ const Register = () => {
             // We need the token to authenticate with our backend
             const token = session.access_token;
 
-            await axios.post('http://localhost:3001/auth/setup-account', {
+            await axios.post(`${API_URL}/auth/setup-account`, {
                 name: formData.name,
                 organizationName: formData.organizationName
             }, {

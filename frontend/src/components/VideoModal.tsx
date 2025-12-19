@@ -1,4 +1,5 @@
 import React from 'react';
+import { API_URL } from '../lib/api';
 import { X, Sparkles, AlertTriangle } from 'lucide-react';
 
 interface VideoModalProps {
@@ -12,7 +13,7 @@ interface VideoModalProps {
 const VideoModal: React.FC<VideoModalProps> = ({ isOpen, onClose, videoUrl, executionId, errorAnalysis }) => {
     if (!isOpen) return null;
 
-    const fullVideoUrl = `http://localhost:3001${videoUrl}`;
+    const fullVideoUrl = `${API_URL}${videoUrl}`;
 
     return (
         <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4">

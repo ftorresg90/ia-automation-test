@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef, useCallback } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import { API_URL } from '../lib/api';
 import { Upload, Download, Play, Loader2, Video, Trash2, Clock, CheckCircle, XCircle } from 'lucide-react';
 import Toast from '../components/Toast';
 import FileUploadZone from '../components/FileUploadZone';
@@ -48,7 +49,7 @@ const ProjectDetails = () => {
     const fetchProject = useCallback(async () => {
         try {
             const token = localStorage.getItem('token');
-            const res = await axios.get(`http://localhost:3001/projects/${id}`, {
+            const res = await axios.get(`${API_URL}/projects/${id}`, {
                 headers: { Authorization: `Bearer ${token}` }
             });
             setProject(res.data);
@@ -114,7 +115,7 @@ const ProjectDetails = () => {
         setUploading(true);
         try {
             const token = localStorage.getItem('token');
-            await axios.post('http://localhost:3001/upload', formData, {
+            await axios.post(`${API_URL}/upload`, formData, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                     'Content-Type': 'multipart/form-data'
@@ -140,7 +141,7 @@ const ProjectDetails = () => {
         setGenerating(true);
         try {
             const token = localStorage.getItem('token');
-            const res = await axios.get(`http://localhost:3001/generate/${id}?buildTool=${selectedBuildTool}`, {
+            const res = await axios.get(`${API_URL}/generate/${id}?buildTool=${selectedBuildTool}`, {
                 headers: { Authorization: `Bearer ${token}` },
                 responseType: 'blob'
             });
@@ -186,7 +187,7 @@ const ProjectDetails = () => {
             if (selectedCases.length !== project.testCases.length) {
                 payload.testCaseIds = selectedCases;
             }
-            const res = await axios.post('http://localhost:3001/execution',
+            const res = await axios.post(`${API_URL}/execution`,
                 payload,
                 { headers: { Authorization: `Bearer ${token}` } }
             );
@@ -216,7 +217,7 @@ const ProjectDetails = () => {
 
         try {
             const token = localStorage.getItem('token');
-            await axios.post(`http://localhost:3001/execution/stop/${executionId}`, {}, {
+            await axios.post(`${API_URL}/execution/stop/${executionId}`, {}, {
                 headers: { Authorization: `Bearer ${token}` }
             });
             setToast({ message: 'Execution stopped successfully', type: 'success' });
@@ -235,7 +236,7 @@ const ProjectDetails = () => {
         if (!project?.id) return;
         try {
             const token = localStorage.getItem('token');
-            await axios.delete(`http://localhost:3001/execution/project/${project.id}`, {
+            await axios.delete(`${API_URL}/execution/project/${project.id}`, {
                 headers: { Authorization: `Bearer ${token}` }
             });
             await fetchProject();
@@ -249,7 +250,7 @@ const ProjectDetails = () => {
     const handleRetryExecution = async (executionId: string) => {
         try {
             const token = localStorage.getItem('token');
-            await axios.post(`http://localhost:3001/execution/retry/${executionId}`, {}, {
+            await axios.post(`${API_URL}/execution/retry/${executionId}`, {}, {
                 headers: { Authorization: `Bearer ${token}` }
             });
             setToast({ message: 'Retry started successfully', type: 'success' });
@@ -281,7 +282,7 @@ const ProjectDetails = () => {
         if (!testCaseToDelete) return;
         try {
             const token = localStorage.getItem('token');
-            await axios.delete(`http://localhost:3001/testcases/${testCaseToDelete}`, {
+            await axios.delete(`${API_URL}/testcases/${testCaseToDelete}`, {
                 headers: { Authorization: `Bearer ${token}` }
             });
             setSelectedCases(prev => prev.filter(id => id !== testCaseToDelete));
@@ -305,7 +306,7 @@ const ProjectDetails = () => {
         try {
             const token = localStorage.getItem('token');
             const deletePromises = project.testCases.map((tc: any) =>
-                axios.delete(`http://localhost:3001/testcases/${tc.id}`, {
+                axios.delete(`${API_URL}/testcases/${tc.id}`, {
                     headers: { Authorization: `Bearer ${token}` }
                 })
             );

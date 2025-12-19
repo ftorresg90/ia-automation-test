@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { API_URL } from '../lib/api';
 import Toast from '../components/Toast';
 
 const NewProject = () => {
@@ -13,7 +14,7 @@ const NewProject = () => {
         e.preventDefault();
         try {
             const token = localStorage.getItem('token');
-            await axios.post('http://localhost:3001/projects', { name, description }, {
+            await axios.post(`${API_URL}/projects`, { name, description }, {
                 headers: { Authorization: `Bearer ${token}` }
             });
             navigate('/dashboard');

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 import { supabase } from '../lib/supabase';
+import { API_URL } from '../lib/api';
 import { LogIn, Mail, Lock } from 'lucide-react';
 import Toast from '../components/Toast';
 
@@ -27,9 +28,9 @@ const Login = () => {
 
             // 2. Auto-Sync: Ensure user exists in our DB
             // This fixes "USER_NOT_SYNCED" issues if the user was created in Supabase but not in DB
+            // This fixes "USER_NOT_SYNCED" issues if the user was created in Supabase but not in DB
             try {
-                const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3001';
-                await axios.post(`${apiUrl}/auth/setup-account`, {
+                await axios.post(`${API_URL}/auth/setup-account`, {
                     name: 'User', // Default or fetch from profile if stored
                     organizationName: 'My Organization' // Default
                 }, {

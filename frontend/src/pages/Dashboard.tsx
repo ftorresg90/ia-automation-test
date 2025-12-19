@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { API_URL } from '../lib/api';
 import { Plus, FileText, Play, Trash2, Search, Clock } from 'lucide-react';
 import DeleteModal from '../components/DeleteModal';
 import ProjectCardSkeleton from '../components/ProjectCardSkeleton';
@@ -24,7 +25,7 @@ const Dashboard = () => {
             try {
                 setLoading(true);
                 const token = localStorage.getItem('token');
-                const res = await axios.get('http://localhost:3001/projects', {
+                const res = await axios.get(`${API_URL}/projects`, {
                     headers: { Authorization: `Bearer ${token}` }
                 });
                 setProjects(res.data);
@@ -55,7 +56,7 @@ const Dashboard = () => {
         try {
             setDeletingId(projectToDelete.id);
             const token = localStorage.getItem('token');
-            await axios.delete(`http://localhost:3001/projects/${projectToDelete.id}`, {
+            await axios.delete(`${API_URL}/projects/${projectToDelete.id}`, {
                 headers: { Authorization: `Bearer ${token}` }
             });
             setProjects(prev => prev.filter(p => p.id !== projectToDelete.id));
