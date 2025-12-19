@@ -188,7 +188,7 @@ const analyzePage = async (pageUrl: string): Promise<PageAnalysis | null> => {
     const domain = new URL(normalizedUrl).hostname;
 
     // 3. Intentar cargar del cache persistente
-    const cached = domCache.load(domain);
+    const cached = await domCache.load(domain);
     if (cached) {
         console.log(`[Selector] Using cached DOM for ${domain}`);
         const analysis: PageAnalysis = {
@@ -293,7 +293,7 @@ const analyzePage = async (pageUrl: string): Promise<PageAnalysis | null> => {
             };
 
             // 5. GUARDAR en cache persistente
-            domCache.save(domain, normalizedUrl, analysis.elementsByType);
+            await domCache.save(domain, normalizedUrl, analysis.elementsByType);
 
             return analysis;
         } catch (error) {
@@ -662,7 +662,7 @@ export const generateSelector = async (
     let strategiesFound = false;
 
     // -1. Check Registry for verified selectors (Phase 3)
-    const verified = selectorRegistry.getSelector(elementName);
+    const verified = await selectorRegistry.getSelector(elementName);
     if (verified) {
         const verifiedSelector = verified.type === 'xpath' ? `xpath=${verified.selector}` : verified.selector;
 

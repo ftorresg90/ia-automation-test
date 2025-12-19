@@ -19,7 +19,7 @@ export const attemptHeal = async (entryTestPath: string, errorLog: string, artif
                 if (snapshotData.url && snapshotData.elementsByType) {
                     try {
                         const domain = new URL(snapshotData.url).hostname;
-                        domCache.save(domain, snapshotData.url, snapshotData.elementsByType);
+                        await domCache.save(domain, snapshotData.url, snapshotData.elementsByType);
                         console.log(`🚑 [Auto-Heal] Loaded failure DOM snapshot for ${domain}`);
                     } catch (urlError) {
                         console.warn('🚑 [Auto-Heal] Invalid URL in snapshot', urlError);
@@ -164,7 +164,7 @@ export const attemptHeal = async (entryTestPath: string, errorLog: string, artif
 
                                 // Save to Registry
                                 const isXpath = newSelector.startsWith('xpath=') || newSelector.startsWith('//');
-                                selectorRegistry.saveSelector(
+                                await selectorRegistry.saveSelector(
                                     elementName,
                                     newSelector,
                                     isXpath ? 'xpath' : 'css',

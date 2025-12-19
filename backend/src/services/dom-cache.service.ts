@@ -1,7 +1,4 @@
-
-import fs from 'fs';
-import path from 'path';
-import os from 'os';
+import prisma from '../utils/prisma';
 
 interface PageElement {
     tag: string;
@@ -32,21 +29,11 @@ interface DomCacheEntry {
     };
 }
 
-const CACHE_DIR = path.join(os.tmpdir(), 'dom-cache');
 const TTL_DAYS = 30; // Cache válido por 30 días
 
 class DomCacheService {
     constructor() {
-        // Crear directorio si no existe
-        if (!fs.existsSync(CACHE_DIR)) {
-            fs.mkdirSync(CACHE_DIR, { recursive: true });
-            console.log(`[DOM Cache] Created cache directory: ${CACHE_DIR}`);
-        }
-    }
-
-    private getCacheFilePath(domain: string): string {
-        const safeDomain = domain.replace(/[^a-z0-9.-]/gi, '_');
-        return path.join(CACHE_DIR, `${safeDomain}.json`);
+        console.log('[DOM Cache] Using database storage');
     }
 
     private getElementKey(element: PageElement): string {
@@ -56,23 +43,25 @@ class DomCacheService {
 
         // Para elementos sin id/testid, usar combinación de atributos
         const textSnippet = (element.text || '').slice(0, 50).trim();
-        const key = `${element.tag}:${element.name || ''}:${element.placeholder || ''}:${textSnippet}`;
-        return key;
+        return `${element.tag}:${element.name || ''}:${element.placeholder || ''}:${textSnippet}`;
     }
 
-    public load(domain: string): DomCacheEntry | null {
-        const filepath = this.getCacheFilePath(domain);
-
-        if (!fs.existsSync(filepath)) {
-            console.log(`[DOM Cache] No cache found for ${domain}`);
-            return null;
-        }
-
+    public async load(domain: string): Promise<DomCacheEntry | null> {
         try {
-            const data = JSON.parse(fs.readFileSync(filepath, 'utf-8'));
+            const entry = await prisma.domCache.findUnique({
+                where: { domain }
+            });
+
+            if (!entry) {
+                console.log(`[DOM Cache] No cache found in DB for ${domain}`);
+                return null;
+            }
+
+            const data = entry.data as unknown as DomCacheEntry;
+            const lastUpdated = entry.lastUpdatedAt.getTime();
 
             // Verificar TTL
-            const age = Date.now() - data.lastUpdatedAt;
+            const age = Date.now() - lastUpdated;
             const maxAge = TTL_DAYS * 24 * 60 * 60 * 1000;
 
             if (age > maxAge) {
@@ -81,7 +70,7 @@ class DomCacheService {
                 return null;
             }
 
-            console.log(`[DOM Cache] ✓ Loaded cache for ${domain} (${data.metadata.totalElements} elements, ${data.analysisCount} analyses)`);
+            console.log(`[DOM Cache] ✓ Loaded cache from DB for ${domain} (${data.metadata.totalElements} elements)`);
             return data;
         } catch (error) {
             console.error(`[DOM Cache] Error loading cache for ${domain}:`, error);
@@ -89,137 +78,112 @@ class DomCacheService {
         }
     }
 
-    public save(domain: string, url: string, newElements: Record<string, PageElement[]>): void {
-        const existing = this.load(domain);
-        const now = Date.now();
+    public async save(domain: string, url: string, newElements: Record<string, PageElement[]>): Promise<void> {
+        try {
+            const existing = await this.load(domain);
+            const now = Date.now();
 
-        let merged: DomCacheEntry;
+            let merged: DomCacheEntry;
 
-        if (existing) {
-            // MERGE incremental
-            console.log(`[DOM Cache] Merging new elements into existing cache for ${domain}`);
+            if (existing) {
+                console.log(`[DOM Cache] Merging new elements into existing cache for ${domain}`);
 
-            merged = {
-                ...existing,
-                lastUpdatedAt: now,
-                analysisCount: existing.analysisCount + 1,
-                metadata: {
-                    ...existing.metadata,
-                    lastUrl: url
+                merged = {
+                    ...existing,
+                    lastUpdatedAt: now,
+                    analysisCount: existing.analysisCount + 1,
+                    metadata: {
+                        ...existing.metadata,
+                        lastUrl: url
+                    }
+                };
+
+                // Merge elementos por tipo
+                for (const [type, newEls] of Object.entries(newElements)) {
+                    const existingEls = existing.elementsByType[type] || [];
+                    merged.elementsByType[type] = this.mergeElements(existingEls, newEls);
                 }
-            };
 
-            // Merge elementos por tipo
-            let newElementsAdded = 0;
-            for (const [type, newEls] of Object.entries(newElements)) {
-                const existingEls = existing.elementsByType[type] || [];
-                const beforeCount = existingEls.length;
-                const mergedEls = this.mergeElements(existingEls, newEls);
-                merged.elementsByType[type] = mergedEls;
+                merged.metadata.totalElements = Object.values(merged.elementsByType)
+                    .reduce((sum, els) => sum + els.length, 0);
 
-                const addedCount = mergedEls.length - beforeCount;
-                if (addedCount > 0) {
-                    newElementsAdded += addedCount;
-                    console.log(`[DOM Cache]   + ${addedCount} new ${type} elements`);
-                }
+            } else {
+                console.log(`[DOM Cache] Creating new cache for ${domain}`);
+                const totalElements = Object.values(newElements).reduce((sum, els) => sum + els.length, 0);
+
+                merged = {
+                    url,
+                    domain,
+                    firstCapturedAt: now,
+                    lastUpdatedAt: now,
+                    analysisCount: 1,
+                    elementsByType: newElements,
+                    metadata: {
+                        totalElements,
+                        lastUrl: url
+                    }
+                };
             }
 
-            // Actualizar total
-            const oldTotal = existing.metadata.totalElements;
-            merged.metadata.totalElements = Object.values(merged.elementsByType)
-                .reduce((sum, els) => sum + els.length, 0);
-
-            console.log(`[DOM Cache] Total elements: ${oldTotal} → ${merged.metadata.totalElements} (+${newElementsAdded})`);
-
-        } else {
-            // NUEVO cache
-            console.log(`[DOM Cache] Creating new cache for ${domain}`);
-
-            const totalElements = Object.values(newElements).reduce((sum, els) => sum + els.length, 0);
-
-            merged = {
-                url,
-                domain,
-                firstCapturedAt: now,
-                lastUpdatedAt: now,
-                analysisCount: 1,
-                elementsByType: newElements,
-                metadata: {
-                    totalElements,
-                    lastUrl: url
+            // Guardar a DB
+            await prisma.domCache.upsert({
+                where: { domain },
+                update: {
+                    url,
+                    data: merged as any,
+                    lastUpdatedAt: new Date()
+                },
+                create: {
+                    domain,
+                    url,
+                    data: merged as any,
+                    lastUpdatedAt: new Date()
                 }
-            };
+            });
 
-            console.log(`[DOM Cache] Saved ${totalElements} elements for ${domain}`);
+            console.log(`[DOM Cache] ✓ Cache saved to DB for ${domain}`);
+        } catch (error) {
+            console.error(`[DOM Cache] Error saving cache for ${domain}:`, error);
         }
-
-        // Guardar a disco
-        const filepath = this.getCacheFilePath(domain);
-        fs.writeFileSync(filepath, JSON.stringify(merged, null, 2));
-
-        console.log(`[DOM Cache] ✓ Cache saved to ${path.basename(filepath)}`);
     }
 
     private mergeElements(existing: PageElement[], newElements: PageElement[]): PageElement[] {
         const elementMap = new Map<string, PageElement>();
-
-        // Agregar elementos existentes
-        existing.forEach(el => {
-            elementMap.set(this.getElementKey(el), el);
-        });
-
-        // Agregar/actualizar con nuevos elementos
-        newElements.forEach(el => {
-            const key = this.getElementKey(el);
-            // Si ya existe, lo sobrescribe (actualiza)
-            // Si no existe, lo agrega
-            elementMap.set(key, el);
-        });
-
+        existing.forEach(el => elementMap.set(this.getElementKey(el), el));
+        newElements.forEach(el => elementMap.set(this.getElementKey(el), el));
         return Array.from(elementMap.values());
     }
 
-    public clear(domain?: string): void {
-        if (domain) {
-            const filepath = this.getCacheFilePath(domain);
-            if (fs.existsSync(filepath)) {
-                fs.unlinkSync(filepath);
+    public async clear(domain?: string): Promise<void> {
+        try {
+            if (domain) {
+                await prisma.domCache.deleteMany({ where: { domain } });
                 console.log(`[DOM Cache] ✓ Cleared cache for ${domain}`);
             } else {
-                console.log(`[DOM Cache] No cache found for ${domain}`);
+                await prisma.domCache.deleteMany({});
+                console.log(`[DOM Cache] ✓ Cleared all caches`);
             }
-        } else {
-            // Limpiar todo
-            if (fs.existsSync(CACHE_DIR)) {
-                const files = fs.readdirSync(CACHE_DIR);
-                files.forEach(file => {
-                    fs.unlinkSync(path.join(CACHE_DIR, file));
-                });
-                console.log(`[DOM Cache] ✓ Cleared all caches (${files.length} files)`);
-            }
+        } catch (error) {
+            console.error(`[DOM Cache] Error clearing cache:`, error);
         }
     }
 
-    public listCaches(): Array<{ domain: string; elements: number; analyses: number; lastUpdated: Date }> {
-        if (!fs.existsSync(CACHE_DIR)) {
-            return [];
-        }
-
-        const files = fs.readdirSync(CACHE_DIR).filter(f => f.endsWith('.json'));
-
-        return files.map(file => {
-            try {
-                const data = JSON.parse(fs.readFileSync(path.join(CACHE_DIR, file), 'utf-8'));
+    public async listCaches(): Promise<Array<{ domain: string; elements: number; analyses: number; lastUpdated: Date }>> {
+        try {
+            const caches = await prisma.domCache.findMany();
+            return caches.map(c => {
+                const data = c.data as unknown as DomCacheEntry;
                 return {
-                    domain: data.domain,
+                    domain: c.domain,
                     elements: data.metadata.totalElements,
                     analyses: data.analysisCount,
-                    lastUpdated: new Date(data.lastUpdatedAt)
+                    lastUpdated: c.lastUpdatedAt
                 };
-            } catch {
-                return null;
-            }
-        }).filter(Boolean) as Array<{ domain: string; elements: number; analyses: number; lastUpdated: Date }>;
+            });
+        } catch (error) {
+            console.error(`[DOM Cache] Error listing caches:`, error);
+            return [];
+        }
     }
 }
 
