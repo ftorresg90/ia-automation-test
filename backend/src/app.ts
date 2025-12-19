@@ -20,16 +20,9 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
-app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', req.headers.origin || '*');
-    res.header('Access-Control-Allow-Credentials', 'true');
-    res.header('Access-Control-Allow-Methods', corsOptions.methods?.join(', ') || 'GET,POST,PUT,DELETE,OPTIONS');
-    res.header('Access-Control-Allow-Headers', corsOptions.allowedHeaders?.join(', ') || 'Content-Type, Authorization');
-    if (req.method === 'OPTIONS') {
-        return res.sendStatus(204);
-    }
-    next();
-});
+app.use(cors(corsOptions));
+// Removed manual CORS middleware to avoid conflicts with vercel.json and cors package
+
 app.use(express.json({ limit: '50mb' })); // Increase limit for images
 
 app.use('/auth', authRoutes);
