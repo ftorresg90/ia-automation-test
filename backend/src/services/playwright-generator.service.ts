@@ -335,7 +335,7 @@ export const generatePlaywrightPOM = async (
                     console.log(`[generatePOM] Creating new locator: "${locatorName}"`);
 
                     // define array property
-                    const strategiesCode = strategies.map(s => `'${s.replace(/\\/g, '\\\\').replace(/'/g, "\\'").replace(/\n/g, ' ')}'`).join(', ');
+                    const strategiesCode = strategies.map(s => JSON.stringify(s)).join(', ');
                     currentPO.locators.push(`readonly ${locatorName}Selectors: string[] = [${strategiesCode}];`);
                     currentPO.locators.push(`readonly ${locatorName}: Locator;`); // Keep standard locator for simple cases? No, let's rely on strategies.
 
