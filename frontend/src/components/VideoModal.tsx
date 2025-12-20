@@ -6,14 +6,16 @@ interface VideoModalProps {
     isOpen: boolean;
     onClose: () => void;
     videoUrl: string;
+    screenshotUrl?: string | null;
     executionId: string;
     errorAnalysis?: string | null;
 }
 
-const VideoModal: React.FC<VideoModalProps> = ({ isOpen, onClose, videoUrl, executionId, errorAnalysis }) => {
+const VideoModal: React.FC<VideoModalProps> = ({ isOpen, onClose, videoUrl, screenshotUrl, executionId, errorAnalysis }) => {
     if (!isOpen) return null;
 
-    const fullVideoUrl = `${API_URL}${videoUrl}`;
+    const fullVideoUrl = videoUrl?.startsWith('http') ? videoUrl : (videoUrl ? `${API_URL}${videoUrl}` : null);
+    const fullScreenshotUrl = screenshotUrl?.startsWith('http') ? screenshotUrl : (screenshotUrl ? `${API_URL}${screenshotUrl}` : null);
 
     return (
         <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4">
@@ -21,7 +23,7 @@ const VideoModal: React.FC<VideoModalProps> = ({ isOpen, onClose, videoUrl, exec
                 {/* Header */}
                 <div className="flex items-center justify-between p-6 border-b border-gray-200">
                     <div>
-                        <h2 className="text-2xl font-bold text-gray-900">Execution Video</h2>
+                        <h2 className="text-2xl font-bold text-gray-900">Execution Artifacts</h2>
                         <p className="text-sm text-gray-500 mt-1">ID: {executionId}</p>
                     </div>
                     <button
@@ -32,17 +34,36 @@ const VideoModal: React.FC<VideoModalProps> = ({ isOpen, onClose, videoUrl, exec
                     </button>
                 </div>
 
-                {/* Video Player */}
-                <div className="p-6 bg-gray-900 flex justify-center">
-                    <video
-                        src={fullVideoUrl}
-                        controls
-                        autoPlay
-                        className="max-w-full rounded-lg shadow-xl"
-                        style={{ maxHeight: '60vh' }}
-                    >
-                        Your browser does not support the video tag.
-                    </video>
+                {/* Media Section */}
+                <div className="p-6 bg-gray-900 flex flex-col items-center gap-4">
+                    {fullVideoUrl ? (
+                        <video
+                            src={fullVideoUrl}
+                            controls
+                            autoPlay
+                            className="max-w-full rounded-lg shadow-xl"
+                            style={{ maxHeight: '60vh' }}
+                        >
+                            Your browser does not support the video tag.
+                        </video>
+                    ) : fullScreenshotUrl ? (
+                        <div className="flex flex-col items-center gap-2">
+                            <p className="text-amber-400 text-sm flex items-center gap-2">
+                                <AlertTriangle className="w-4 h-4" />
+                                Video not available, showing last screenshot
+                            </p>
+                            <img
+                                src={fullScreenshotUrl}
+                                alt="Failure Screenshot"
+                                className="max-w-full rounded-lg shadow-xl"
+                                style={{ maxHeight: '60vh' }}
+                            />
+                        </div>
+                    ) : (
+                        <div className="text-gray-400 py-20 text-center">
+                            <p>No video or screenshot recorded for this execution.</p>
+                        </div>
+                    )}
                 </div>
 
                 {/* AI Analysis Section */}

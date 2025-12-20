@@ -42,7 +42,7 @@ export const attemptHeal = async (entryTestPath: string, errorLog: string, artif
         for (const line of stackLines) {
             const match = line.match(/at\s+([^\s()]*?\.ts):(\d+)/) || line.match(/\((.*?\.ts):(\d+)(:\d+)?\)/);
             if (match) {
-                const potentialPath = match[1];
+                const potentialPath = match[1].trim();
                 const lineNo = parseInt(match[2]);
 
                 // SKIP: BasePage, node_modules, internal files

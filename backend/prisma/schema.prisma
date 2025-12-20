@@ -63,6 +63,7 @@ model Execution {
   testCase      TestCase? @relation(fields: [testCaseId], references: [id])
   results       Json?     // Detailed results
   videoUrl      String?
+  screenshotUrl String?
   logs          String?
   errorAnalysis String?
   testCaseIds   String[]  @default([]) // Legacy: for batch executions

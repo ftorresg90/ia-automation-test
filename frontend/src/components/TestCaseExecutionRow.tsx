@@ -6,6 +6,7 @@ interface Execution {
     status: 'PENDING' | 'RUNNING' | 'PASSED' | 'FAILED';
     createdAt: string;
     videoUrl?: string;
+    screenshotUrl?: string;
     logs?: string;
     errorAnalysis?: string | null;
 }
@@ -32,7 +33,7 @@ export const TestCaseExecutionRow: React.FC<TestCaseExecutionRowProps> = ({
         );
     }
 
-    const { status, createdAt, videoUrl, logs, errorAnalysis } = latestExecution;
+    const { status, createdAt, videoUrl, screenshotUrl, logs, errorAnalysis } = latestExecution;
 
     return (
         <div className="space-y-2">
@@ -52,13 +53,13 @@ export const TestCaseExecutionRow: React.FC<TestCaseExecutionRowProps> = ({
             {/* Action Buttons */}
             {status !== 'RUNNING' && (
                 <div className="flex gap-2">
-                    {videoUrl && (
+                    {(videoUrl || screenshotUrl) && (
                         <button
                             onClick={() => onViewVideo(latestExecution)}
                             className="flex items-center gap-1 px-2 py-1 text-xs bg-indigo-50 text-indigo-700 rounded hover:bg-indigo-100 transition-colors"
                         >
                             <Video className="w-3 h-3" />
-                            Watch
+                            {videoUrl ? 'Watch' : 'Screenshot'}
                         </button>
                     )}
                     <button
